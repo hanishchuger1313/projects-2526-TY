@@ -1,1 +1,0 @@
-smartai group1
