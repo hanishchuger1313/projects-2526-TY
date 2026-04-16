@@ -1,0 +1,103 @@
+/* TestcasesOnly page - clean table UI (no word stretching) */
+
+.testcases-page .table-page {
+  width: 100%;
+}
+
+.testcases-page .table-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.testcases-page .table-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.testcases-page .table-subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Horizontal scroll container */
+.testcases-page .table-wrap {
+  width: 100%;
+  overflow: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.22);
+}
+
+/* Table should stay wide so columns don't compress into character-break */
+.testcases-page .testcases-table {
+  width: max-content;
+  min-width: 1100px;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: auto;
+  font-size: 13px;
+}
+
+/* Sticky header */
+.testcases-page .testcases-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(21, 21, 29, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 12px 12px;
+  text-align: left;
+  color: #fff;
+
+  /* IMPORTANT: stop character-by-character wrapping */
+  white-space: nowrap;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  hyphens: none !important;
+}
+
+/* Body cells */
+.testcases-page .testcases-table td {
+  padding: 12px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.88);
+  vertical-align: top;
+
+  /* Proper sentence wrapping */
+  white-space: normal;
+  word-break: normal !important;
+  overflow-wrap: break-word; /* breaks only if single token is too long */
+  hyphens: none !important;
+  line-height: 1.45;
+  max-width: 360px; /* readable columns */
+}
+
+/* If any parent CSS forced break-all, override strongly */
+.testcases-page .testcases-table,
+.testcases-page .testcases-table * {
+  word-break: normal !important;
+  overflow-wrap: break-word;
+  hyphens: none !important;
+}
+
+/* Zebra rows */
+.testcases-page .testcases-table tbody tr:nth-child(odd) td {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.testcases-page .testcases-table tbody tr:hover td {
+  background: rgba(124, 58, 237, 0.08);
+}
+
+/* Keep injected <br> readable */
+.testcases-page .testcases-table td br {
+  line-height: 1.4;
+}
