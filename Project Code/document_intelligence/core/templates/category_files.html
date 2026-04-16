@@ -1,0 +1,139 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{{ category }}</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    font-family:'Segoe UI';
+    min-height:100vh;
+}
+
+.file-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    padding:18px;
+    margin-bottom:20px;
+}
+
+.keyword{
+    background:#1e293b;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin:4px;
+    display:inline-block;
+}
+</style>
+</head>
+<body>
+
+<div class="container py-5">
+
+<h2 class="mb-4">📂 {{ category }} Folder</h2>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary mb-4">⬅ Back</a>
+
+{% for doc in documents %}
+<div class="file-card">
+
+    <h5>
+<a href="{% url 'file_detail' doc.id %}" style="color:#38bdf8;text-decoration:none;">
+{{ doc.file_name }}
+</a>
+</h5>
+
+    <div>
+        {% for word in doc.keyword_list %}
+            <span class="keyword">{{ word }}</span>
+        {% endfor %}
+    </div>
+
+</div>
+{% empty %}
+<p>No files in this category.</p>
+{% endfor %}
+
+</div>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>{{ category }}</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background: linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+font-family:'Segoe UI';
+min-height:100vh;
+}
+
+.file-card{
+background:rgba(255,255,255,0.05);
+border-radius:12px;
+padding:18px;
+margin-bottom:20px;
+}
+
+.keyword{
+background:#1e293b;
+padding:6px 12px;
+border-radius:20px;
+font-size:12px;
+margin:4px;
+display:inline-block;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container py-5">
+
+<h2 class="mb-4">📂 {{ category }} Folder</h2>
+
+<a href="{% url 'dashboard' %}" class="btn btn-secondary mb-4">⬅ Back</a>
+
+{% for doc in documents %}
+
+<div class="file-card">
+
+<h5>
+<a href="{% url 'file_detail' doc.id %}" style="color:#38bdf8;text-decoration:none;">
+{{ doc.file_name }}
+</a>
+</h5>
+
+<div>
+
+{% for word in doc.keyword_list %}
+<span class="keyword">{{ word }}</span>
+{% endfor %}
+
+</div>
+
+</div>
+
+{% empty %}
+
+<p>No files in this category.</p>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>

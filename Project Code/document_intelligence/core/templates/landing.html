@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ClariCortex</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background: linear-gradient(-45deg,#0f172a,#1e293b,#0f2027,#1e3a8a);
+background-size:400% 400%;
+animation:gradientMove 12s ease infinite;
+color:white;
+font-family:'Segoe UI';
+min-height:100vh;
+display:flex;
+flex-direction:column;
+margin:0;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.top-btn{
+position:absolute;
+top:25px;
+right:40px;
+}
+
+.workflow-btn{
+background:#6366f1;
+border:none;
+padding:8px 18px;
+border-radius:20px;
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+.workflow-btn:hover{
+background:#3b82f6;
+}
+
+.hero-section{
+flex:1;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:60px 20px;
+}
+
+.project-title{
+font-size:3.5rem;
+font-weight:700;
+}
+
+.subtitle{
+color:#94a3b8;
+margin-bottom:30px;
+}
+
+.btn-premium{
+background:#3b82f6;
+border:none;
+padding:12px 30px;
+font-size:18px;
+border-radius:30px;
+color:white;
+text-decoration:none;
+}
+
+.how-it-works-section{
+padding:80px 20px;
+text-align:center;
+}
+
+.steps-container{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+
+.step-card{
+background:rgba(255,255,255,0.05);
+border-radius:15px;
+padding:30px;
+width:300px;
+transition:0.4s;
+box-shadow:0 8px 25px rgba(0,0,0,0.3);
+}
+
+.step-card:hover{
+transform:translateY(-10px);
+}
+
+.about-section{
+background:rgba(255,255,255,0.05);
+padding:50px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-btn">
+<a href="/workflow/" class="workflow-btn">System Workflow</a>
+</div>
+
+<div class="hero-section">
+<h1 class="project-title">ClariCortex</h1>
+<p class="subtitle">AI & ML Based Document Categorization Platform</p>
+
+<a href="/upload/" class="btn-premium">Get Started</a>
+</div>
+
+<section class="how-it-works-section">
+
+<h2>How It Works</h2>
+
+<div class="steps-container">
+
+<div class="step-card">
+<h5>📁 Upload ZIP File</h5>
+<p>Upload a ZIP folder containing multiple text documents.</p>
+</div>
+
+<div class="step-card">
+<h5>🤖 AI Analysis</h5>
+<p>TF-IDF vectorization and ML algorithms analyze the documents.</p>
+</div>
+
+<div class="step-card">
+<h5>📊 Organized Output</h5>
+<p>Documents are grouped automatically into categories.</p>
+</div>
+
+</div>
+</section>
+
+<div class="about-section">
+<h4>About ClariCortex</h4>
+
+<p>
+ClariCortex is an AI powered document categorization platform that automatically
+classifies text documents using machine learning techniques.
+</p>
+
+</div>
+
+</body>
+</html>
