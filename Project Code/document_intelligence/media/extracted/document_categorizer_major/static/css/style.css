@@ -1,0 +1,83 @@
+/* ===== Global ===== */
+body {
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Main Container ===== */
+.container-box {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* ===== Title ===== */
+.title {
+    font-weight: 700;
+    color: #333;
+}
+
+/* ===== Dashboard Card ===== */
+.stat-card {
+    background: linear-gradient(45deg,#43cea2,#185a9d);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.stat-card h1 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+/* ===== Upload Button ===== */
+.btn-custom {
+    background: linear-gradient(45deg,#667eea,#764ba2);
+    border: none;
+    color: white;
+    font-weight: 600;
+}
+
+.btn-custom:hover {
+    opacity: 0.9;
+}
+
+/* ===== Category Badge ===== */
+.badge-category {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #f1f1f1;
+}
+
+/* ===== Keywords ===== */
+.keyword {
+    background: #e3f2fd;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    margin: 2px;
+    display: inline-block;
+}
+
+/* ===== Table Header ===== */
+.table th {
+    background: #f8f9fa;
+}
+
+/* ===== Logout Button ===== */
+.logout-btn {
+    background: #dc3545;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background: #bb2d3b;
+}

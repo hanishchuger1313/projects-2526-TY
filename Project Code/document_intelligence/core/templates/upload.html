@@ -1,0 +1,638 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> ClariCortex</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color: #fff;
+    min-height:100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.glass-card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:16px;
+}
+
+.gradient-btn{
+    background: linear-gradient(90deg,#6366f1,#06b6d4);
+    border:none;
+    padding:14px 30px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.gradient-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(99,102,241,0.6);
+}
+
+.pipeline-step{
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.3s;
+}
+
+.pipeline-active{
+    background:rgba(99,102,241,0.2);
+    border-color:#6366f1;
+}
+
+.keyword-badge{
+    background:rgba(255,255,255,0.1);
+    padding:8px 14px;
+    border-radius:8px;
+    font-size:12px;
+    margin:4px;
+    display:inline-block;
+}
+</style>
+</head>
+<body>
+
+<div class="container py-5">
+
+    <div class="text-center mb-5">
+        <h1 class="fw-bold">ClariCortex</h1>
+        <p class="text-secondary small">An ML-Based Document Categorization Platform</p>
+        <p class="text-secondary">TF-IDF • Naive Bayes • SVM • Logistic Regression • 20 Newsgroups</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="glass-card p-5 text-center">
+
+                <h4 class="mb-4">Upload .zip File</h4>
+
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type="file" name="zip_file" accept=".zip" class="form-control mb-4" required>
+
+                    <button type="submit" class="btn gradient-btn text-white">
+                        🚀 Upload & Process
+                    </button>
+                </form>
+
+                {% if error %}
+                <div class="alert alert-danger mt-3">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+            </div>
+
+        </div>
+    </div>
+
+ 
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="glass-card p-4">
+                <h5 class="mb-4">Processing Pipeline</h5>
+
+                <div id="pipeline">
+                    <div class="pipeline-step" id="step1">📄 Document Upload</div>
+                    <div class="pipeline-step" id="step2">🧹 Text Preprocessing</div>
+                    <div class="pipeline-step" id="step3">📊 TF-IDF Vectorization</div>
+                    <div class="pipeline-step" id="step4">🧠 Model Classification (NB / SVM / LR)</div>
+                    <div class="pipeline-step" id="step5">🏷 Category Assignment</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+function simulatePipeline(){
+    let steps = ["step1","step2","step3","step4","step5"];
+    steps.forEach((id,index)=>{
+        setTimeout(()=>{
+            document.getElementById(id).classList.add("pipeline-active");
+        }, index*700);
+    });
+}
+
+simulatePipeline();
+</script>
+
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClariCortex</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+
+body{
+    background: linear-gradient(-45deg,#0f172a,#1e293b,#111827,#0f172a);
+    background-size:400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color:#fff;
+    min-height:100vh;
+    font-family:'Segoe UI', sans-serif;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+
+.glow-title{
+    font-weight:700;
+    font-size:2.5rem;
+    background:linear-gradient(90deg,#6366f1,#06b6d4);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px rgba(99,102,241,0.6);}
+    to{ text-shadow:0 0 25px rgba(6,182,212,0.9);}
+}
+
+
+.glass-card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+}
+
+
+.gradient-btn{
+    background: linear-gradient(90deg,#6366f1,#06b6d4);
+    border:none;
+    padding:14px 30px;
+    font-weight:600;
+    transition:0.3s;
+    border-radius:30px;
+}
+
+.gradient-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(99,102,241,0.6);
+}
+
+.pipeline-step{
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s;
+    opacity:0.5;
+}
+
+.pipeline-active{
+    background:rgba(99,102,241,0.2);
+    border-color:#6366f1;
+    opacity:1;
+    transform:translateX(10px);
+}
+
+
+.loader{
+    display:none;
+    margin-top:20px;
+}
+
+.spinner-border{
+    width:3rem;
+    height:3rem;
+}
+
+.status-text{
+    margin-top:10px;
+    font-size:14px;
+    color:#9ca3af;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container py-5">
+
+   
+    <div class="text-center mb-5">
+        <h1 class="glow-title">ClariCortex</h1>
+        <p class="text-secondary small">ML-Based Document Categorization Platform</p>
+        <p class="text-secondary">TF-IDF • Naive Bayes • SVM • Logistic Regression</p>
+    </div>
+
+    
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <div class="glass-card p-5 text-center">
+
+                <h4 class="mb-4">Upload .zip File</h4>
+
+                <form method="POST" enctype="multipart/form-data" id="uploadForm">
+                    {% csrf_token %}
+                    <input type="file" name="zip_file" accept=".zip" class="form-control mb-4" required>
+
+                    <button type="submit" class="btn gradient-btn text-white">
+                        🚀 Upload & Process
+                    </button>
+                </form>
+
+                {% if error %}
+                <div class="alert alert-danger mt-3">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+               
+                <div class="loader" id="loader">
+                    <div class="spinner-border text-info" role="status"></div>
+                    <div class="status-text" id="statusText">
+                        Initializing...
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+  
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+            <div class="glass-card p-4">
+                <h5 class="mb-4">Processing Pipeline</h5>
+
+                <div id="pipeline">
+                    <div class="pipeline-step" id="step1">📄 Document Upload</div>
+                    <div class="pipeline-step" id="step2">🧹 Text Preprocessing</div>
+                    <div class="pipeline-step" id="step3">📊 TF-IDF Vectorization</div>
+                    <div class="pipeline-step" id="step4">🧠 Model Classification</div>
+                    <div class="pipeline-step" id="step5">🏷 Category Assignment</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    document.getElementById("uploadForm").addEventListener("submit", function(e){
+
+        e.preventDefault(); 
+
+        const form = this;
+        const loader = document.getElementById("loader");
+        const statusText = document.getElementById("statusText");
+
+        loader.style.display="block";
+
+        let steps = ["step1","step2","step3","step4","step5"];
+        let statusMessages = [
+            "Uploading documents...",
+            "Cleaning & preprocessing text...",
+            "Applying TF-IDF vectorization...",
+            "Running ML models...",
+            "Assigning categories..."
+        ];
+
+        steps.forEach((id,index)=>{
+            setTimeout(()=>{
+                document.getElementById(id).classList.add("pipeline-active");
+                statusText.innerText = statusMessages[index];
+            }, index*1000);
+        });
+
+        
+        setTimeout(()=>{
+            form.submit();
+        }, 5500);
+
+    });
+    </script>
+
+</body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClariCortex</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* =========================
+   Animated Gradient Background
+========================= */
+body{
+    background: linear-gradient(-45deg,#0f172a,#1e293b,#111827,#0f172a);
+    background-size:400% 400%;
+    animation: gradientBG 12s ease infinite;
+    color:#fff;
+    min-height:100vh;
+    font-family:'Segoe UI', sans-serif;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* =========================
+   Glowing Animated Title
+========================= */
+.glow-title{
+    font-weight:700;
+    font-size:2.8rem;
+    background:linear-gradient(90deg,#6366f1,#06b6d4);
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px rgba(99,102,241,0.6);}
+    to{ text-shadow:0 0 25px rgba(6,182,212,0.9);}
+}
+
+/* =========================
+   Glass Card
+========================= */
+.glass-card{
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    transition:0.4s;
+}
+
+/* =========================
+   Gradient Button
+========================= */
+.gradient-btn{
+    background: linear-gradient(90deg,#6366f1,#06b6d4);
+    border:none;
+    padding:14px 30px;
+    font-weight:600;
+    transition:0.3s;
+    border-radius:30px;
+}
+
+.gradient-btn:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(99,102,241,0.6);
+}
+
+/* =========================
+   Pipeline
+========================= */
+.pipeline-step{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:10px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    transition:0.4s;
+    opacity:0.5;
+}
+
+.pipeline-active{
+    background:rgba(99,102,241,0.2);
+    border-color:#6366f1;
+    opacity:1;
+    transform:translateX(10px);
+}
+
+.step-status{
+    font-size:18px;
+    font-weight:bold;
+    color:#22c55e;
+}
+
+/* =========================
+   Loader
+========================= */
+.loader{
+    display:none;
+    margin-top:20px;
+}
+
+.spinner-border{
+    width:3rem;
+    height:3rem;
+}
+
+.status-text{
+    margin-top:10px;
+    font-size:14px;
+    color:#9ca3af;
+}
+
+/* =========================
+   Scroll Fade Animation
+========================= */
+.fade-in{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.fade-in.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* =========================
+   Success Flash
+========================= */
+.success-glow{
+    animation: successPulse 1s ease-in-out;
+}
+
+@keyframes successPulse{
+    0%{ box-shadow:0 0 0px rgba(34,197,94,0); }
+    50%{ box-shadow:0 0 30px rgba(34,197,94,0.8); }
+    100%{ box-shadow:0 0 0px rgba(34,197,94,0); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container py-5">
+
+    <!-- Header -->
+    <div class="text-center mb-5 fade-in">
+        <h1 class="glow-title">ClariCortex</h1>
+        <p class="text-secondary small">ML-Based Document Categorization Platform</p>
+        <p class="text-secondary">TF-IDF • Naive Bayes • SVM • Logistic Regression</p>
+    </div>
+
+    <!-- Upload Card -->
+    <div class="row justify-content-center fade-in">
+        <div class="col-md-8">
+
+            <div class="glass-card p-5 text-center" id="uploadCard">
+
+                <h4 class="mb-4">Upload .zip File</h4>
+
+                <form method="POST" enctype="multipart/form-data" id="uploadForm">
+                    {% csrf_token %}
+                    <input type="file" name="zip_file" accept=".zip" class="form-control mb-4" required>
+
+                    <button type="submit" class="btn gradient-btn text-white">
+                        🚀 Upload & Process
+                    </button>
+                </form>
+
+                {% if error %}
+                <div class="alert alert-danger mt-3">
+                    {{ error }}
+                </div>
+                {% endif %}
+
+                <div class="loader" id="loader">
+                    <div class="spinner-border text-info" role="status"></div>
+                    <div class="status-text" id="statusText">
+                        Initializing...
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Pipeline -->
+    <div class="row justify-content-center mt-5 fade-in">
+        <div class="col-md-8">
+            <div class="glass-card p-4">
+                <h5 class="mb-4">Processing Pipeline</h5>
+
+                <div id="pipeline">
+
+                    <div class="pipeline-step" id="step1">
+                        <span>📄 Document Upload</span>
+                        <span class="step-status" id="tick1"></span>
+                    </div>
+
+                    <div class="pipeline-step" id="step2">
+                        <span>🧹 Text Preprocessing</span>
+                        <span class="step-status" id="tick2"></span>
+                    </div>
+
+                    <div class="pipeline-step" id="step3">
+                        <span>📊 TF-IDF Vectorization</span>
+                        <span class="step-status" id="tick3"></span>
+                    </div>
+
+                    <div class="pipeline-step" id="step4">
+                        <span>🧠 Model Classification</span>
+                        <span class="step-status" id="tick4"></span>
+                    </div>
+
+                    <div class="pipeline-step" id="step5">
+                        <span>🏷 Category Assignment</span>
+                        <span class="step-status" id="tick5"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+/* Scroll Fade In */
+const faders = document.querySelectorAll('.fade-in');
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+
+/* Pipeline Animation */
+document.getElementById("uploadForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const form = this;
+    const loader = document.getElementById("loader");
+    const statusText = document.getElementById("statusText");
+    const uploadCard = document.getElementById("uploadCard");
+
+    loader.style.display="block";
+
+    let steps = [
+        { step:"step1", tick:"tick1", text:"Uploading documents..." },
+        { step:"step2", tick:"tick2", text:"Cleaning & preprocessing text..." },
+        { step:"step3", tick:"tick3", text:"Applying TF-IDF vectorization..." },
+        { step:"step4", tick:"tick4", text:"Running ML models..." },
+        { step:"step5", tick:"tick5", text:"Assigning categories..." }
+    ];
+
+    steps.forEach((item,index)=>{
+        setTimeout(()=>{
+            document.getElementById(item.step).classList.add("pipeline-active");
+            document.getElementById(item.tick).innerHTML = "✔";
+            statusText.innerText = item.text;
+        }, index*1200);
+    });
+
+    setTimeout(()=>{
+        uploadCard.classList.add("success-glow");
+        statusText.innerText="Processing Complete!";
+    }, steps.length*1200);
+
+    setTimeout(()=>{
+        form.submit();
+    }, steps.length*1200 + 1500);
+
+});
+</script>
+
+</body>
+</html>

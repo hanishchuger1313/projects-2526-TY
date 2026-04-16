@@ -1,0 +1,72 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    font-family:'Segoe UI';
+    min-height:100vh;
+}
+
+.folder-card{
+    background:rgba(255,255,255,0.05);
+    border-radius:18px;
+    padding:35px;
+    text-align:center;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.folder-card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,0.08);
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+</style>
+</head>
+<body>
+
+<div class="container py-5">
+
+<h2 class="mb-4">📁 Category Folders</h2>
+
+<div class="row">
+
+{% for category in categories %}
+    <div class="col-md-4 mb-4">
+        {% if category.predicted_category %}
+        <a href="{% url 'category_view' category.predicted_category %}">
+            <div class="folder-card">
+                <h4>📂 {{ category.predicted_category }}</h4>
+                <p>{{ category.count }} Files</p>
+            </div>
+        </a>
+        {% endif %}
+    </div>
+{% empty %}
+    <div class="text-center">
+        <p>No categorized files yet.</p>
+    </div>
+{% endfor %}
+
+</div>
+
+</div>
+</body>
+</html>
