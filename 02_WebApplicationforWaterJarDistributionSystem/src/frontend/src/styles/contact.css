@@ -1,0 +1,28 @@
+.contact {
+  padding: 100px 20px;
+  text-align: center;
+  background: #ffffff;
+}
+
+.contact-grid {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 50px;
+}
+
+.contact-grid h4 {
+  margin-bottom: 8px;
+}
+
+.contact-grid p {
+  color: #5f6c7b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+}

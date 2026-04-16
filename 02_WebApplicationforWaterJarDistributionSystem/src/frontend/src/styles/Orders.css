@@ -1,0 +1,48 @@
+.order-stats {
+  display: flex;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.stat {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.blue { background: #eef5ff; }
+.yellow { background: #fff7e6; }
+.green { background: #f0fff4; }
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search input {
+  border: none;
+  outline: none;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.tag.new { background: #e6f4ff; color: #1677ff; }
+.tag.pending { background: #f1f3f5; }
+.tag.completed,
+.tag.paid { background: #e6fffa; color: #08979c; }
+.tag.delivered { background: #f6ffed; color: #389e0d; }
+
+.icon {
+  cursor: pointer;
+}

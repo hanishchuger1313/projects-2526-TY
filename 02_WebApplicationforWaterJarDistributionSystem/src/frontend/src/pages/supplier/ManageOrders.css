@@ -1,0 +1,245 @@
+/* ================= CONTAINER ================= */
+.orders-container {
+  padding: 30px;
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+th {
+  background: #f1f4f9;
+}
+
+/* ================= STATUS ================= */
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.status.confirmed {
+  background: #d4f5e9;
+  color: #1abc9c;
+}
+
+.status.pending {
+  background: #ffe8d6;
+  color: #ff7a00;
+}
+
+/* ================= BUTTONS ================= */
+.confirm-btn {
+  background: #2ecc71;
+  border: none;
+  padding: 6px 10px;
+  margin-right: 5px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  background: #e74c3c;
+  border: none;
+  padding: 6px 10px;
+  margin-right: 5px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.view-btn {
+  background: #1f75d8;
+  border: none;
+  padding: 6px 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ================= PAYMENT ================= */
+.payment {
+  padding:5px 10px;
+  border-radius:6px;
+  font-size:13px;
+  font-weight:500;
+}
+
+.payment.pending {
+  background:#fff3cd;
+  color:#856404;
+}
+
+.payment.collected {
+  background:#d4edda;
+  color:#155724;
+}
+
+.collect-payment-btn{
+  background:#10b981;
+  color:white;
+  border:none;
+  padding:5px 10px;
+  border-radius:6px;
+  cursor:pointer;
+  margin-left:8px;
+}
+
+.collect-payment-btn:hover{
+  background:#059669;
+}
+
+/* ================= MODAL (🔥 FIXED ISSUE) ================= */
+.invoice-overlay{
+  position: fixed;   /* 🔥 IMPORTANT FIX */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+/* ================= INVOICE BOX ================= */
+.invoice-container{
+  width: 600px;
+  max-width: 90%;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+
+  animation: popup 0.3s ease;
+}
+
+/* ================= TOP ================= */
+.invoice-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.close-btn{
+  background:#e74c3c;
+  color:white;
+  border:none;
+  padding:6px 10px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ================= CONTENT ================= */
+.invoice-section{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+}
+
+.customer-name{
+  font-weight:600;
+}
+
+/* ================= BADGE ================= */
+.badge{
+  padding:5px 10px;
+  border-radius:6px;
+  font-size:12px;
+  display:inline-block;
+  margin-top:5px;
+}
+
+.badge.confirmed{
+  background:#d4f5e9;
+  color:#1abc9c;
+}
+
+.badge.pending{
+  background:#ffe8d6;
+  color:#ff7a00;
+}
+
+.badge.delivered{
+  background:#d1ecf1;
+  color:#0c5460;
+}
+
+/* ================= INVOICE TABLE ================= */
+.invoice-table{
+  border-top:1px solid #ddd;
+  border-bottom:1px solid #ddd;
+  margin:20px 0;
+}
+
+.table-header,
+.table-row{
+  display:grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding:10px 0;
+}
+
+.table-header{
+  font-weight:600;
+  border-bottom:1px solid #ddd;
+}
+
+/* ================= TOTAL ================= */
+.invoice-total{
+  text-align:right;
+}
+
+.invoice-total h1{
+  color:#1f75d8;
+}
+
+/* ================= ANIMATION ================= */
+@keyframes popup{
+  from{
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to{
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.amount-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+}
+
+.amount-row.advance {
+  color: green;
+}
+
+.amount-row.remaining {
+  color: red;
+}
+
+.payment-history {
+  margin-top: 20px;
+}
+
+.payment-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}

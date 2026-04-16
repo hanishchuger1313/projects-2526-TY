@@ -1,0 +1,17 @@
+.customers-container {
+  padding: 30px;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-radius: 12px;
+}
+
+th, td {
+  padding: 15px;
+}
+
+th {
+  background: #f1f4f9;
+}
