@@ -1,4 +1,4 @@
-#Title: Document Categorization Using Machine Learning.
+##Title: Document Categorization Using Machine Learning.
 
 ## Description
 This project implements a Machine Learning-based Document Categorization System that automatically classifies textual documents into predefined categories. The system is designed to handle large volumes of unstructured data and organize them efficiently using intelligent algorithms.
