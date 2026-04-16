@@ -1,0 +1,71 @@
+/* Table layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  background: #f9fafb;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  font-size: 14px;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Remove last row border */
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Status badges */
+.pending {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #fff7e6;
+  color: #d97706;
+}
+
+.paid {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #ecfdf5;
+  color: #16a34a;
+}
+
+/* Action button */
+td button {
+  background: #1677ff;
+  color: #ffffff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+td button:hover {
+  background: #0f5ed7;
+}
+
+/* Card spacing (if used) */
+.card {
+  margin-top: 20px;
+}

@@ -1,0 +1,192 @@
+/* ===== PAGE TITLE ===== */
+
+.page-title{
+font-size:26px;
+font-weight:600;
+margin-bottom:6px;
+color:#1f2937;
+}
+
+.page-subtitle{
+color:#6b7280;
+margin-bottom:25px;
+}
+
+
+/* ===== FORM CARD ===== */
+
+.staff-form-card{
+background:#ffffff;
+padding:30px;
+border-radius:12px;
+margin-bottom:30px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.staff-form-card:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+
+/* ===== FORM GRID ===== */
+
+.staff-form{
+display:grid;
+grid-template-columns:repeat(4,1fr) auto;
+gap:18px;
+align-items:center;
+}
+
+
+/* ===== INPUT FIELDS ===== */
+
+.staff-form input{
+padding:12px 14px;
+border:1px solid #e5e7eb;
+border-radius:8px;
+font-size:14px;
+background:#f9fafb;
+transition:0.25s;
+}
+
+.staff-form input::placeholder{
+color:#9ca3af;
+}
+
+.staff-form input:focus{
+outline:none;
+border-color:#2563eb;
+background:#fff;
+box-shadow:0 0 0 2px rgba(37,99,225,0.15);
+}
+
+
+/* ===== ADD STAFF BUTTON ===== */
+
+.staff-form button{
+    
+background:#2563eb;
+color:white;
+border:none;
+padding:12px 18px;
+border-radius:8px;
+cursor:pointer;
+font-weight:500;
+font-size:14px;
+transition:0.25s;
+white-space:nowrap;
+}
+
+.staff-form button:hover{
+background:#1d4ed8;
+transform:translateY(-1px);
+box-shadow:0 4px 10px rgba(37,99,235,0.25);
+}
+
+
+/* ===== TABLE CARD ===== */
+
+.staff-table-card{
+background:#ffffff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+
+/* ===== TABLE ===== */
+
+.data-table{
+width:100%;
+border-collapse:collapse;
+margin-top:12px;
+}
+
+.data-table thead{
+background:#f1f5f9;
+}
+
+.data-table th{
+text-align:left;
+padding:14px;
+font-weight:600;
+font-size:14px;
+color:#374151;
+}
+
+.data-table td{
+padding:14px;
+border-top:1px solid #e5e7eb;
+font-size:14px;
+color:#4b5563;
+}
+
+
+/* ===== TABLE ROW HOVER ===== */
+
+.data-table tbody tr{
+transition:0.2s;
+}
+
+.data-table tbody tr:hover{
+background:#f9fafb;
+}
+
+
+/* ===== STAFF AVATAR ===== */
+
+.staff-avatar{
+width:25px;
+height:25px;
+background:#2563eb;
+color:white;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:400;
+font-size:12px;
+box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:1100px){
+
+.staff-form{
+grid-template-columns:1fr 1fr;
+}
+
+.staff-form button{
+grid-column:span 2;
+}
+
+}
+
+@media(max-width:600px){
+
+.staff-form{
+grid-template-columns:1fr;
+}
+
+.staff-form button{
+grid-column:span 1;
+}
+
+}
+
+.delete-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}

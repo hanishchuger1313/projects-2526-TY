@@ -1,0 +1,147 @@
+/* ================= CONTAINER ================= */
+.order-container {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  background: #f5f7fb;
+}
+
+/* ================= CARD ================= */
+.order-card {
+  width: 750px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* ================= HEADER ================= */
+.order-header {
+  background: linear-gradient(135deg, #1f75d8, #4facfe);
+  color: white;
+  padding: 25px;
+}
+
+.order-header h2 {
+  margin: 0;
+}
+
+.order-header p {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ================= FORM ================= */
+form {
+  padding: 30px;
+}
+
+/* GRID */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* FORM GROUP (IMPORTANT FIX) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LABEL */
+label {
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+/* INPUTS */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #1f75d8;
+  outline: none;
+  box-shadow: 0 0 5px rgba(31,117,216,0.3);
+}
+
+/* TEXTAREA */
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+/* FULL WIDTH */
+.full-width {
+  margin-top: 20px;
+}
+
+/* ================= PRICE BOX ================= */
+.price-section {
+  margin-top: 30px;
+  background: #eef3f9;
+  padding: 20px;
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* TEXT SIDE */
+.price-section h3 {
+  margin: 0;
+  color: #1f75d8;
+}
+
+.price-section p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* BUTTON */
+.place-btn {
+  background: linear-gradient(135deg,#1f75d8,#4facfe);
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.place-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(31,117,216,0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-card {
+    width: 95%;
+  }
+
+  .price-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

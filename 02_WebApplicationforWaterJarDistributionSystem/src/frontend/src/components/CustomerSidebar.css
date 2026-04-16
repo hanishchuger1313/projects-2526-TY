@@ -1,0 +1,47 @@
+.customer-sidebar {
+  width: 240px;
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1f75d8;
+}
+
+.customer-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: -10px;
+}
+
+.customer-sidebar li {
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.customer-sidebar li.active,
+.customer-sidebar li:hover {
+  background: #1f75d8;
+}
+
+.customer-sidebar li a {
+  text-decoration: none;
+  color: black;
+}
+
+.customer-sidebar li.active a {
+  color: white;
+}
+
+.logout {
+  color: red;
+  cursor: pointer;
+  margin-top: 20px;
+}

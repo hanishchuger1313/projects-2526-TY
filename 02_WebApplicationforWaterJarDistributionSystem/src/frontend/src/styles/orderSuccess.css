@@ -1,0 +1,58 @@
+.receipt-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f6fb;
+}
+
+.receipt-card {
+  width: 420px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.success-icon {
+  background: #22c55e;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+}
+
+.order-id-box {
+  background: #eef2f7;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.order-details {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.price-box {
+  background: #f1f5f9;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

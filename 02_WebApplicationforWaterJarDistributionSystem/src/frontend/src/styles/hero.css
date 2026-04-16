@@ -1,0 +1,131 @@
+.hero {
+  position: relative;
+  text-align: center;
+
+  /* Section Size */
+  width: 100%;
+  height: 100vh; /* Full screen height */
+
+  /* Background Image */
+  background-image: url("../assets/waterword.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  padding: 0 20px;
+}
+
+/* Dark Overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+/* Content above overlay */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+/* Heading */
+.hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Paragraph */
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Buttons container */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Common button */
+.btn {
+  padding: 12px 22px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Primary button */
+.primary {
+  background: #0077d9;
+  color: white;
+}
+
+.primary:hover {
+  background: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 119, 217, 0.3);
+}
+
+/* Outline button */
+.outline {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.outline:hover {
+  background: #559ab1;
+  color: white;
+  border-color: #559ab1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 119, 217, 0.2);
+}
+
+/* Click effect */
+.btn:active {
+  transform: scale(0.96);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    height: 90vh;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 220px;
+  }
+}
