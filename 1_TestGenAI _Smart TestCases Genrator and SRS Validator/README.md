@@ -1,4 +1,4 @@
-# 🚀 TestGen AI : Smart TestCases Genrator and SRS Validato (STCG)
+# 01 - TestGen AI : Smart TestCases Genrator and SRS Validato (STCG)
 
 ## 📌 Project Title
 
